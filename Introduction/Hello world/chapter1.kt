@@ -182,4 +182,99 @@ fun main() {
 
 
 
-// 
+// RETURN NULL
+// RETURN NULL
+
+fun greetingFunction() : String ? {
+     return null
+}
+
+// unit return type---> fun greeting() : Unit {}  --> omitted because its enabled by default
+
+fun printGreeting() {
+    println(greetingFunction())
+}
+
+fun main() {
+    // invoke the function here
+    println(greetingFunction())
+    printGreeting()
+}
+
+
+
+
+// SINGLE EXPRESSION FUNCTION RETURN
+
+fun greetingFunction() : String = "Hello single expression function"
+
+// unit return type---> fun greeting() : Unit {}  --> omitted because its enabled by default
+
+fun printGreeting() {
+    println(greetingFunction())
+}
+
+fun main() {
+    // invoke the function here
+    println(greetingFunction())
+    printGreeting()
+}
+
+
+// SIMPLER SINGLE EXPRESSION FUNCTION RETURN (remove String casting)
+
+fun greetingFunction() : String = "Hello single expression function"
+
+fun greetingTwo() = "simpler expression as kotlin knows what to return "
+
+fun printGreeting() {
+    println(greetingFunction())
+    println(greetingTwo())
+}
+
+fun main() {
+    // invoke the function here
+    printGreeting()
+    greetingTwo()
+}
+
+
+// FUNCTION PARAMETER
+
+fun printGreeting(userName : String) {
+    // instead of using + concatenation use kotlin's $ template
+    val message = "Hello $userName"
+    println(message)
+}
+
+
+fun main() {
+    // invoke the function here
+    printGreeting("Timz Owen")
+}
+
+
+
+// SIMPLIFYING FUNCTION PARAMETERS
+
+// SIMPLIFYING FUNCTION PARAMETERS
+
+fun printGreeting(userName : String) {
+    // instead of using + concatenation use kotlin's $ template
+    val message = "Hello $userName"
+    println(message)
+}
+
+fun printGreeting2(userName2 : String){
+    println("Hello senior $userName2")
+}
+
+fun printGreeting3(userName3 : String) = "hello Engineer $userName3"
+
+// Main Function
+fun main() {
+    // invoke the function here respectively
+    printGreeting("Timz Owen")
+    printGreeting2("Owen")
+    printGreeting3("Timz")
+}
