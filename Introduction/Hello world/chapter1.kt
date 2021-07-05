@@ -35,8 +35,11 @@ res0: kotlin.Int = 1
 
 //Variables
 
-val fish1 = 20   // unchangable
-var fish2 = 10   // changeable
+// val name: type = value 
+val myName : String = "Timz Owen"
+
+val fish1 = 20   // unchangable / Immutable / cannot be updated
+var fish2 = 10   // changeable  / mutable   / can be updated
 
 
 // implicit $ explicit casting
@@ -67,5 +70,41 @@ var moreFish : List<String>? = null // elements
 var moreMoreFish List<String?>?  = null // both List and elements are null
 
 
+//NULL POINT EXCEPTION
 
 
+
+
+// CONTROL FLOW 
+
+// IF STATEMENT 
+
+var userName : String? = "Timz Owen"
+
+fun main() {
+   //if else statement
+    userName = null // update the value and try again with null 
+    if(userName != null){
+        println(userName)
+    }else{
+        print("No name , Null")
+    }
+}
+
+
+
+//  WHEN STATEMENT --> (Java switch case)
+
+var userName : String? = "Timz Owen"
+
+fun main() {
+   // when statement
+    userName = null
+    when(userName){
+        null -> println("No name")
+        else -> println(userName)
+    }
+}
+
+
+// 
