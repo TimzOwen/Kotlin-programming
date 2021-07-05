@@ -29,4 +29,21 @@ fun main() {
     developers.forEach { dev ->
         println(dev)
     }
+    // printing elements with index using forEachIndexed
+    developers.forEachIndexed { index, dev ->
+        println("$dev is at index number $index")
+    }
+
+
+     //Lists in kotlin
+    val fruits = listOf("Tomatoes","oranges","onions","carrots")
+
+    //print the elements
+    fruits.forEachIndexed{index, fruit ->
+        println("$fruit is at index $index")
+    }
+
+
+
+
 }
