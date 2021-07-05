@@ -257,8 +257,6 @@ fun main() {
 
 // SIMPLIFYING FUNCTION PARAMETERS
 
-// SIMPLIFYING FUNCTION PARAMETERS
-
 fun printGreeting(userName : String) {
     // instead of using + concatenation use kotlin's $ template
     val message = "Hello $userName"
@@ -271,10 +269,18 @@ fun printGreeting2(userName2 : String){
 
 fun printGreeting3(userName3 : String) = "hello Engineer $userName3"
 
+fun greeting4(name: String, role : String )  = "$name $role"
+
 // Main Function
 fun main() {
     // invoke the function here respectively
     printGreeting("Timz Owen")
     printGreeting2("Owen")
-    printGreeting3("Timz")
+    println(printGreeting3("Timz"))
+    println(greeting4("Timz Owen","Android developer"))
+
 }
+
+
+
+
