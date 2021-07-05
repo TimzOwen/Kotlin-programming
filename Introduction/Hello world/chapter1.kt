@@ -107,4 +107,31 @@ fun main() {
 }
 
 
-// 
+// USING IF ELSE TO REASSIGN VALUES
+
+var userName : String? = null
+
+fun main() {
+    userName = "Android developer"
+  // If else statement to assign variables
+    val newUser = if (userName != null) userName else "Welcome to Kotlin"
+    println(newUser)
+
+
+}
+
+
+// USING WHEN
+var userName : String? = null
+
+fun main() {
+    userName = "Android developer"
+  // when else statement to assign variables
+    val newUser = when(userName){
+        null -> "Hello Android developer"
+        else -> userName
+    }
+    println(newUser)
+
+
+}
