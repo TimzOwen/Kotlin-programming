@@ -43,6 +43,11 @@ fun main() {
         println("$fruit is at index $index")
     }
 
+    // Maps --> uses key-value pair
+    val map = mapOf(1 to "timz", 2 to "owen", 3 to "Ninja")
+    map.forEach { key, value ->
+        println("$key -> $value")
+    }
 
 
 
