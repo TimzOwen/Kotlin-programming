@@ -135,3 +135,51 @@ fun main() {
 
 
 }
+
+
+// FUNCTION IN KOTLIN
+
+//fun - keyword to be used
+//name - function name
+//() - Function parameters
+//: - before defining a return type
+//dataType - data type to be return in the function
+
+fun greetingFunction() : String{
+     return "Welcome to Functions android developer"
+}
+
+
+fun main() {
+    // invoke the function here
+    print(greetingFunction())
+}
+
+
+// UNIT RETURN TYPE
+
+//fun - keyword to be used
+//name - function name
+//() - Function parameters
+//: - before defining a return type
+//dataType - data type to be return in the function
+
+fun greetingFunction() : String{
+     return "Welcome to Functions android developer"
+}
+
+// unit return type---> fun greeting() : Unit {}  --> omitted because its enabled by default
+
+fun printGreeting() {
+    println(greetingFunction())
+}
+
+fun main() {
+    // invoke the function here
+    println(greetingFunction())
+    printGreeting()
+}
+
+
+
+// 
