@@ -126,3 +126,18 @@ fun main() {
 
 
 }
+
+// CLASS (007 )
+// class modifiers
+// public by default
+// internal -> only public within a module
+// private -> only that file can access
+
+fun main() {
+    // create an instance of the main class
+    val person = Person()
+
+    person.printUserInfo()      // errors because its method is private
+
+
+}
