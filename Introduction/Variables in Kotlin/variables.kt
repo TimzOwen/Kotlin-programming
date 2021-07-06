@@ -145,12 +145,50 @@ fun main() {
 
 }
 
+// Function - NAMED PARAMETER (Pass in parameter with not particular order)
+
+fun sayHello(greeting : String, name : String) = "$greeting $name"
+
+fun main(// named array as parameter
+fun branding(company : String, vararg products : String){
+    products.forEach { product ->
+        println("$company $product")
+    }
+}
+
+fun main() {
+    val companies = arrayOf("Samsung","Google","Safaricom","Huawei","Facebook")
+    branding(products = companies, company = "Kenya")
+}
+    println(sayHello(greeting = "Hello",name = "Owen"))
+    println(sayHello(name = "Timz",greeting = "Hi"))
+
+}
 
 
+// Default argument values
+
+fun sayHello(greeting : String = "Hey", name : String="developer") = "$greeting $name"
+
+fun main() {
+    println(sayHello(greeting = "Hello",name = "Owen"))
+    println(sayHello("Hi"))
+    println(sayHello())
+
+}
 
 
+// named array as parameter
+fun branding(company : String, vararg products : String){
+    products.forEach { product ->
+        println("$company $product")
+    }
+}
 
-
+fun main() {
+    val companies = arrayOf("Samsung","Google","Safaricom","Huawei","Facebook")
+    branding(products = companies, company = "Kenya")
+}
 
 
 
