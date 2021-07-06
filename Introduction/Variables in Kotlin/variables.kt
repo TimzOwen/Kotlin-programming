@@ -35,6 +35,8 @@ fun main() {
     }
 
 
+    // IMMUTABLE LISTS & MAPS
+
      //Lists in kotlin
     val fruits = listOf("Tomatoes","oranges","onions","carrots")
 
@@ -48,6 +50,126 @@ fun main() {
     map.forEach { key, value ->
         println("$key -> $value")
     }
+
+    
+    //.. MUTABLE LISTS AND MAPS
+
+    // Mutable lists
+    val developers = mutableListOf("Timz","Owen","Shem","Pappi")
+    developers.add("Salma")
+
+    // mutable maps
+    val devs = mutableMapOf(1 to "Timz", 2 to "Owen",3 to "Shem")
+    devs[4] = "salma"
+    
+}
+
+
+// COLLECTION TYPES AND FUNCTIONS
+// EXTERNAL FUNCTION
+
+// modifiying lists and multiple parameter
+fun sayHallo(greeting : String, itemsToGreet : List<String>){
+    itemsToGreet.forEach { itemToGreet ->
+        println("$greeting $itemToGreet")
+    }
+}
+//MAIN FUNCITON
+fun main() {
+
+    val intrestingThings = listOf("Kotlin", "Java","Python","Gaming")
+    sayHallo("Hello",intrestingThings)
+
+    }
+
+
+
+// Example 2
+
+fun brandType(brand : String, computers : List<String>){
+    computers.forEach {  comp ->
+        println(" $brand $comp")
+    }
+}
+
+fun main() {
+
+    val electronics = listOf("Python", "Java", "Machine Learning","phones")
+    brandType("HP",electronics)
+
+}
+
+
+
+// VARARGS, NAMED, ARGUEMENTS, DEFAULT PARAMETER VALUES.
+
+// vararg->variable number of keyword arguements
+
+
+fun brandType(brand : String,  vararg computers : String){
+    computers.forEach {  comp ->
+        println(" $brand $comp")
+    }
+}
+
+fun main() {
+
+    brandType("HP","Ram","Pixel","Keyboard","phone","Usb","LAN")
+
+}
+
+//example 2 varargs
+
+fun standUp(name : String, vararg tasks : String){
+    tasks.forEach { task ->
+        println("$name $task")
+    }
+}
+
+fun main() {
+    standUp("Timz","android","backend php","Programming","springboot")
+
+}
+
+
+// spread operator to accept varargs as string
+fun standUp(name : String, vararg tasks : String){
+    tasks.forEach { task ->
+        println("$name $task")
+    }
+}
+
+fun main() {
+    val networks = arrayOf("Retrofit","firebase","json","backbase")
+    standUp("Timz",*networks)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
