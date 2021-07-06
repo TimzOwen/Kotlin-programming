@@ -68,7 +68,7 @@ class Person(val fName:String="Code" , val sName : String="Ninja"){
     var nickName : String? = null
         //setter
         set(value) {
-            field = value
+            field = value   // field is keyword used to implement the updates  
             println("new name is $nickName")
         }
         //getter
@@ -80,8 +80,109 @@ class Person(val fName:String="Code" , val sName : String="Ninja"){
 
 
 
+//CLASS (006)
+//class properties & methods
+
+// direct initialisation from constructor
+class Person(val fName:String="Code" , val sName : String="Ninja"){
+
+    var nickName : String? = null
+        //setter
+        set(value) {
+            field = value
+            println("new name is $nickName")
+        }
+        //getter
+        get() {
+            println("returned value is $field")
+            return field
+        }
+    //method to print user names
+    fun printUserInfo(){
+        println("Hello $fName ($nickName) $sName")
+    }
+}
 
 
+
+//CLASS (006 - a)
+//class properties & methods ( with nick name not null)
+
+// direct initialisation from constructor
+class Person(val fName:String="Code" , val sName : String="Ninja"){
+
+    var nickName : String? = null
+        //setter
+        set(value) {
+            field = value
+            println("new name is $nickName")
+        }
+        //getter
+        get() {
+            println("returned value is $field")
+            return field
+        }
+    //method to print user names ( first check if null)
+    fun printUserInfo(){
+        //create a var to check for null values
+
+        println("Hello $fName ($nickName) $sName")
+    }
+}
+
+
+
+
+//CLASS (006 - b)
+//class properties & methods ( with nick name null)
+
+// direct initialisation from constructor
+class Person(val fName:String="Code" , val sName : String="Ninja"){
+
+    var nickName : String? = null
+        //setter
+        set(value) {
+            field = value
+            println("new name is $nickName")
+        }
+        //getter
+        get() {
+            println("returned value is $field")
+            return field
+        }
+    //method to print user names ( first check if null)
+    fun printUserInfo(){
+        //create a var to check for null values
+        var nickNameToPrint = if(nickName != null) nickName else "No nickName"
+        println("Hello $fName ($nickNameToPrint) $sName")
+    }
+}
+
+
+//CLASS (006 - c)
+//class properties & methods ( with nick name null) - ofice operator
+
+// direct initialisation from constructor
+class Person(val fName:String="Code" , val sName : String="Ninja"){
+
+    var nickName : String? = null
+        //setter
+        set(value) {
+            field = value
+            println("new name is $nickName")
+        }
+        //getter
+        get() {
+            println("returned value is $field")
+            return field
+        }
+    //method to print user names ( first check if null)
+    fun printUserInfo(){
+        //create a var to check for null value (use office operator)
+        var nickNameToPrint = nickName ?: "No nickName"
+        println("Hello $fName ($nickNameToPrint) $sName")
+    }
+}
 
 
 

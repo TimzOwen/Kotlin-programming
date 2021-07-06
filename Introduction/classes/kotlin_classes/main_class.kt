@@ -73,5 +73,56 @@ fun main() {
 }
 
 
+// CLASS (006)
+// class properties & Methods
 
-// 
+fun main() {
+    // create an instance of the main class
+    val person = Person()
+
+    person.printUserInfo()
+
+
+}
+
+
+// CLASS (006 - a)
+// class properties & Methods ( with nick name not null)
+
+fun main() {
+    // create an instance of the main class
+    val person = Person()
+
+    person.nickName = "Simba"
+
+    person.printUserInfo()
+
+
+}
+
+
+// CLASS (006 - b)
+// class properties & Methods ( with nick name null)
+
+fun main() {
+    // create an instance of the main class
+    val person = Person()
+
+    person.printUserInfo()
+
+
+}
+
+
+
+// CLASS (006 - c)
+// class properties & Methods ( with nick name null) - office operator
+
+fun main() {
+    // create an instance of the main class
+    val person = Person()
+
+    person.printUserInfo()
+
+
+}
