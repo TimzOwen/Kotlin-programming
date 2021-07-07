@@ -41,3 +41,28 @@ fun main() {
 }
 
 
+// interface(003)
+
+//abstract class--> It doesn't need to implement all the methods of a class
+
+interface PersonInfoProvider{
+    val providerInfo : String
+    fun printInfo(person : Person) {
+        println(providerInfo)
+        person.printUserInfo()
+    }
+}
+
+// " : " ---> used to show implementation
+class BasicProviderInfo : PersonInfoProvider{
+    override val providerInfo: String
+        get() = TODO("Not yet implemented")
+}
+
+fun main() {
+    val provider = BasicProviderInfo()
+
+    provider.printInfo(Person())
+}
+
+
