@@ -10,7 +10,7 @@ interface PersonInfoProvider{
 
 class BasicProviderInfo : PersonInfoProvider{
     override fun printInfo(person: Person) {
-        TODO("Not yet implemented")
+       
     }    
 }
 
