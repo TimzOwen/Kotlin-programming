@@ -56,7 +56,7 @@ interface PersonInfoProvider{
 // " : " ---> used to show implementation
 class BasicProviderInfo : PersonInfoProvider{
     override val providerInfo: String
-        get() = TODO("Not yet implemented")
+        get() = "BasicInfoProvider"
 }
 
 fun main() {
@@ -66,3 +66,4 @@ fun main() {
 }
 
 
+// 
