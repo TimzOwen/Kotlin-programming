@@ -51,6 +51,40 @@ fun main() {
         println("$key -> $value")
     }
 
+
+
+    
+    // List of Strings and methods in it (Immutable)
+
+fun main() {
+    val students = listOf("Timz","Owen","Stacy","Shem","Chelsea","Alex","Omondi")
+
+    println(students.sorted())  // sort a list alphabetically
+    println(students[0])    // access specific student
+    println(students.last()) // prints last element in a list
+    println(students.first()) // prints first element in the list
+    println(students.contains("Owen"))  // returns boolean true if the element is contained inside
+
+
+}
+
+
+    // Mutable Lsit of Elements
+    // List of Strings and methods in it (Mutable)
+
+fun main() {
+    val students = arrayListOf("Timz","Owen","Stacy","Shem","Chelsea","Alex","Omondi")
+
+    println(students.size)  //returns the number of elements in a list
+    students.add("Kibet")   // adds the element to the last part
+    println(students)
+    students.add(0,"Kevin" ) // adds to specific index an element
+    println(students)
+    
+}
+
+
+
     
     //.. MUTABLE LISTS AND MAPS
 
@@ -58,11 +92,45 @@ fun main() {
     val developers = mutableListOf("Timz","Owen","Shem","Pappi")
     developers.add("Salma")
 
-    // mutable maps
+
+    // mutable maps -> unorder key value pair list of elements 
     val devs = mutableMapOf(1 to "Timz", 2 to "Owen",3 to "Shem")
     devs[4] = "salma"
     
 }
+
+// Maps of Strings and methods in it (immutable)
+// are of type key value pair
+
+fun main() {
+    val students = mapOf("Timz" to 2,"Owen" to 4,"Stacy" to 6,"Shem" to 8,"Chelsea" to 10)
+    println(students)
+    println(students["Owen"])   // get the value of the key provided
+    println(students.getOrDefault("Kiptoo","No such Key"))  //returns default value if none exist
+    println(student.values) // print values 
+    println(student.key)    // returns all key in the map
+
+}
+
+
+// Mutable maps (use HashMap)
+// hasMaps of Strings and methods in it (Mutable)
+// are of type key value pair
+
+fun main() {
+    val students = hashMapOf("Timz" to 2,"Owen" to 4,"Stacy" to 6,"Shem" to 8,"Chelsea" to 10)
+
+    students["Timz"] = 20   // changing value of a key
+    println(students)
+    students["Alex"] = 30   // inserting a new element into the hash map
+    println(students)
+    students.remove("Timz") //removes an element from the map
+    students.isEmpty() // return a boolean based on if elements are empty or not
+    students.clear()    // removes all elements in the list
+
+}
+
+
 
 
 // COLLECTION TYPES AND FUNCTIONS

@@ -24,6 +24,7 @@ fish4 + fish3
 
 
 // operation methods
+
 // call methods on values
  val fish = 5
  fish.minus(2)   //subtraction
@@ -35,11 +36,17 @@ res0: kotlin.Int = 1
 
 //Variables
 
+
 // val name: type = value 
 val myName : String = "Timz Owen"
 
+var a = 5
+var b = 5
+println(a + b)  // addition using variables
+
 val fish1 = 20   // unchangable / Immutable / cannot be updated
 var fish2 = 10   // changeable  / mutable   / can be updated
+var isBlack = true  // boolean 
 
 
 // implicit $ explicit casting
@@ -155,6 +162,16 @@ fun main() {
     print(greetingFunction())
 }
 
+// Function with arguements
+
+fun main() {
+    fun makeSound(name : String){
+        println(name)
+    }
+
+    makeSound("This is Timz")
+}
+
 
 // UNIT RETURN TYPE
 
@@ -179,6 +196,33 @@ fun main() {
     println(greetingFunction())
     printGreeting()
 }
+
+
+
+// Function with return types
+
+fun main() {
+    fun calculateBudget(num1: Int, num2: Int): Int {
+        return num1 + num2
+    }
+
+    println(calculateBudget(5,7))
+    println("The sum is ${calculateBudget(4,9)}")
+}
+
+
+
+// Function Default values
+
+fun main() {
+    fun calculateBudget(num1: Int = 10, num2: Int = 20): Int {
+        return num1 + num2
+    }
+    //default values being assgined incase no parameter is being passed
+    println("default value sum is ${calculateBudget()}")
+    println("NO default here, parms passed sum is ${calculateBudget(4,4)}") //overwrite the default values
+}
+
 
 
 
@@ -282,5 +326,76 @@ fun main() {
 }
 
 
+
+// CONDITIONAL LOGIC
+
+
+//
+fun main() {
+    val a = 5
+    val b = 5
+
+    // check equality
+    if (a == b) {
+        println("They are equal")
+    }
+
+    // not equal check
+    if (a != b) {
+        println("They are not equal")
+
+    }
+
+    //check greater / less than
+    val account = 500
+    val price = 600
+
+    if (account >= price){
+        println("You can order")
+    }
+    else{
+        println("You are broke")
+    }
+
+    // conditional and operators
+    val bal = 400
+    val transport = 500
+    val accountBal = 100
+    if (bal >= accountBal && transport >= transport){
+        println("You are good to oder transport")
+    }else if (transport < account){
+        println("You cannot get transport")
+    }else{
+        println("Dont go for shopping")
+    }
+
+    // Booleans
+    val isRaining = true
+    val isSunny = false
+
+    if (isRaining && isSunny){
+        println("Let's get a warm place")
+    }else{
+        println("Go swimming")
+    }
+}
+
+
+
+// WHEN STATEMENTS
+
+// When case statements for (switch case in other programming languages)
+
+fun main() {
+
+    when(val userNumber = 20){
+        10 -> println("Number is $userNumber")
+        20 -> println("number is $userNumber")
+        30 -> println("The val is at $userNumber")
+        50 -> println("The number is $userNumber")
+        else -> println("No matching value")
+    }
+
+}
 
 
