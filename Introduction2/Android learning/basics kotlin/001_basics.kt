@@ -78,3 +78,66 @@ fun printBoarder(){
    }
    println()
 }
+
+
+
+ // function arguements 
+ fun main() {
+    val border = "*"
+    printBorder(border)
+    println("Happy Birthday, Jhansi!")
+    printBorder(border)
+}
+
+fun printBorder(border : String ){
+   repeat(37){
+       print(border)
+   }
+   println()
+}
+
+
+// function arguements 
+fun main() {
+    val border = "*-_._-*"
+    printBorder(border)
+    println("Happy Birthday, Jhansi!")
+    printBorder(border)
+}
+​
+fun printBorder(border : String ){
+   repeat(7){
+       print(border)
+   }
+   println()
+}
+// output
+*-_._-**-_._-**-_._-**-_._-**-_._-**-_._-**-_._-*
+Happy Birthday, Jhansi!
+*-_._-**-_._-**-_._-**-_._-**-_._-**-_._-**-_._-*
+
+
+
+
+ // function arguements 
+ fun main() {
+    val border = "*-_._-*"
+    val numRepeat = 4
+    printBorder(border, numRepeat)
+    println(" Happy Birthday, Owen ")
+    printBorder(border,numRepeat)
+}
+​
+fun printBorder(border : String, numRepeat : Int){
+   repeat(numRepeat){
+       print(border)
+   }
+   println()
+}
+// output
+
+*-_._-**-_._-**-_._-**-_._-*
+ Happy Birthday, Owen 
+*-_._-**-_._-**-_._-**-_._-*
+
+
