@@ -121,3 +121,50 @@ fun main()
    val rolled = firstDice.rollDice()
    println("Your ${firstDice.numSides} sided dice just rolled ${rolled}")
 }
+
+
+
+// Class Instnace  (2)
+
+class Dice(val numSides : Int ){
+    fun rollDice(): Int {
+        val roll = (1..numSides).random()
+        return roll
+    }
+}
+
+fun main()
+{
+   val firstDice = Dice(20)
+   val rolled = firstDice.rollDice()
+   println("Your ${firstDice.numSides} sided dice just rolled ${rolled}")
+   
+   val diceTwo = Dice(6)
+   val dice2Roll = diceTwo.rollDice()
+   println("Your ${diceTwo.numSides} sided dice just rolled ${dice2Roll}")
+}
+// output
+Your 20 sided dice just rolled 10
+Your 6 sided dice just rolled 1
+
+
+
+// Simplifying the Code
+
+class Dice(val numSides : Int ){
+    fun rollDice(): Int {
+        return (1..numSides).random()
+    }
+}
+
+fun main()
+{
+   val firstDice = Dice(20)
+   println("Your ${firstDice.numSides} sided dice just rolled ${firstDice.rollDice()}")
+   
+   val diceTwo = Dice(6)
+   println("Your ${diceTwo.numSides} sided dice just rolled ${diceTwo.rollDice()}")
+}
+//output
+Your 20 sided dice just rolled 3
+Your 6 sided dice just rolled 1
