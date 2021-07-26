@@ -141,3 +141,97 @@ fun printBorder(border : String, numRepeat : Int){
 *-_._-**-_._-**-_._-**-_._-*
 
 
+
+ // function arguements with more than two parameter 
+ 
+ 
+ fun main() {
+    val border = "*-_._-*"
+    val numRepeat = 4
+    val type = "BMW"
+    val cost = 300000
+    printBorder(border, numRepeat)
+    println(" Happy Birthday, Owen ")
+    printBorder(border,numRepeat)
+    messageBMI(numRepeat,type, cost)
+}
+
+fun printBorder(border : String, numRepeat : Int){
+   repeat(numRepeat){
+       print(border)
+   }
+   println()
+}
+
+// three parameters
+fun messageBMI(numRepeat : Int, type : String , cost : Int){
+    repeat(numRepeat){
+        print(type)
+        println(cost)
+    }
+    println()
+}
+// output
+*-_._-**-_._-**-_._-**-_._-*
+ Happy Birthday, Owen 
+*-_._-**-_._-**-_._-**-_._-*
+BMW300000
+BMW300000
+BMW300000
+BMW300000
+
+
+
+
+// print hbd cake
+// Nesting methods and Multiple functions
+
+// main function
+fun main(){
+    val age = 24
+    val layers = 5
+    
+    printCakeCandles(age)
+    printCakeTop(age)
+    printCakeBottom(age,layers)
+    
+}
+
+//function to print cake top
+fun printCakeTop(age : Int){
+    repeat(age + 2){
+        print("=")
+    }
+    println()
+}
+
+// function to print cake candles
+fun printCakeCandles(age : Int){
+    repeat(age){
+        print(",")
+    }    
+    println("")
+    repeat(age){
+        print("|")
+    }
+    println()
+}
+
+// function for printing Bottom
+fun	printCakeBottom(age : Int, layers : Int){
+    repeat(layers){
+        repeat(age + 2){
+        print("@")
+   	 }
+        println()
+    }
+}
+// output
+,,,,,,,,,,,,,,,,,,,,,,,,
+||||||||||||||||||||||||
+==========================
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@
+@@@@@@@@@@@@@@@@@@@@@@@@@@
