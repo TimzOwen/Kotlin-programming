@@ -499,3 +499,241 @@ class RoundTower(
        return super.floorArea() * floors
    }
 }
+
+
+
+
+
+
+
+
+
+
+
+// MODIFYING CLASSES IN HIERACHY
+
+// import PI from kotlin
+import kotlin.math.PI
+
+fun main() {
+    // create instance of square cabin
+    val squareCabin = SquareCabin(4, 50.00)
+    val roundHat = RoundHut(3, 10.0)
+    val roundTower = RoundTower(2, 15.5)
+    
+    with(squareCabin){
+        println("\nSquare Cabin\n============")
+        println("Capacity: ${capacity}")
+        println("Material: ${buildingMaterial}")
+        println("Has room? ${hasRoom()}")
+        println("floor areas ${floorArea()}")
+    with(roundHat){
+         println("\nRound Hut\n=========")
+            println("Material: ${buildingMaterial}")
+           println("Capacity: ${capacity}")
+           println("Has room? ${hasRoom()}")
+           println("Floor area 2dp %.2f".format(floorArea()))
+    }
+    with(roundTower) {
+        println("\nRound Tower\n==========")
+        println("Material: ${buildingMaterial}")
+        println("Capacity: ${capacity}")
+        println("Has room? ${hasRoom()}")
+        println("Floor area 2dp %.2f".format(floorArea()))
+}
+        
+    }
+}
+
+// abstract class and function to check if there are free rooms
+abstract class Dwelling(private var residents: Int) {
+    abstract val buildingMaterial: String
+    abstract val capacity: Int
+
+    fun hasRoom(): Boolean {
+       return residents < capacity
+   }
+    abstract fun floorArea() : Double
+}
+
+// add the length as double. and override the fun to calc flooor area.
+class SquareCabin(residents : Int, val length: Double) : Dwelling(residents){
+    override val buildingMaterial = "wood"
+    override val capacity = 10
+    
+    override fun floorArea() : Double{
+        return length * length
+    }
+}
+
+open class RoundHut(residents : Int,val radius:Double) : Dwelling(residents){
+    override val buildingMaterial = "straw"
+    override val capacity = 6
+    
+    override fun floorArea() : Double{
+        return PI*radius*radius
+    }
+}
+// int = 2 , added as default incase no passed paramter on main fun
+class RoundTower(residents : Int, radius : Double, val floor : Int = 5) : RoundHut(residents, radius){
+    override val buildingMaterial = "Stone"
+    override val capacity = 4
+    
+    // override to make sure number of floors is taken to consideration
+    override fun floorArea(): Double{
+        return super.floorArea()*floor // super calls the method 
+    }
+}
+//output
+
+Square Cabin
+============
+Capacity: 10
+Material: wood
+Has room? true
+floor areas 2500.0
+
+Round Hut
+=========
+Material: straw
+Capacity: 6
+Has room? true
+Floor Area 314.1592653589793
+
+Round Tower
+==========
+Material: Stone
+Capacity: 4
+Has room? true
+Floor Area 3773.838175124739
+
+
+
+
+
+// Add a user if Room is available
+// import PI from kotlin
+import kotlin.math.PI
+import kotlin.math.sqrt
+
+    fun main() {
+        // create instance of square cabin
+        val squareCabin = SquareCabin(6, 50.00)
+        val roundHat = RoundHut(3, 10.0)
+        val roundTower = RoundTower(4, 15.5)
+        
+        with(squareCabin){
+            println("\nSquare Cabin\n============")
+        	println("Capacity: ${capacity}")
+        	println("Material: ${buildingMaterial}")
+        	println("Has room? ${hasRoom()}")
+            println("floor areas ${floorArea()}")
+        with(roundHat){
+             println("\nRound Hut\n=========")
+   			 println("Material: ${buildingMaterial}")
+  		     println("Capacity: ${capacity}")
+  		     println("Has room? ${hasRoom()}")
+             println("Floor Area %.2f".format(floorArea()))
+             println("Has Room? ${hasRoom()}")
+             getRoom()
+             println("Carpet size: %.2f".format(CalMaxCarpetSize()))
+            
+        }
+        with(roundTower) {
+    		println("\nRound Tower\n==========")
+    		println("Material: ${buildingMaterial}")
+    		println("Capacity: ${capacity}")
+    		println("Has room? ${hasRoom()}")
+            println("Floor area 2dp %.2f".format(floorArea()))
+			println("Carpet size: %.2f".format(CalMaxCarpetSize()))
+        }
+            
+        }
+    }
+
+    // abstract class and function to check if there are free rooms
+    abstract class Dwelling(private var residents: Int) {
+        abstract val buildingMaterial: String
+        abstract val capacity: Int
+
+        fun hasRoom(): Boolean {
+           return residents < capacity
+       }
+        abstract fun floorArea() : Double
+        
+        // add a resident if there is Room available
+        fun getRoom(){
+            if(capacity>residents){
+                residents++
+                println("you have a room")
+            }else{
+                println("You have no room Left")
+            }
+        }
+    }
+
+    // add the length as double. and override the fun to calc flooor area.
+    class SquareCabin(residents : Int, val length: Double) : Dwelling(residents){
+        override val buildingMaterial = "wood"
+        override val capacity = 6
+        
+        override fun floorArea() : Double{
+            return length * length
+        }
+    }
+    
+    open class RoundHut(residents : Int,val radius:Double) : Dwelling(residents){
+        override val buildingMaterial = "straw"
+        override val capacity = 4
+        
+        override fun floorArea() : Double{
+            return PI*radius*radius
+        }
+        //function to calc the area of carpet for round hats alone
+        fun CalMaxCarpetSize():Double {
+            val diameter = radius * 2
+            return sqrt(diameter * diameter/2)
+        }
+    }
+    // int = 2 , added as default incase no passed paramter on main fun
+    class RoundTower(residents : Int, radius : Double, val floor : Int = 2) : RoundHut(residents, radius){
+        override val buildingMaterial = "Stone"
+        override val capacity = 4
+        
+        // override to make sure number of floors is taken to consideration
+        override fun floorArea(): Double{
+            return super.floorArea()*floor // super calls the method 
+        }
+    }
+
+
+// output
+
+Square Cabin
+============
+Capacity: 6
+Material: wood
+Has room? false
+floor areas 2500.0
+
+Round Hut
+=========
+Material: straw
+Capacity: 4
+Has room? true
+Floor Area 314.16
+Has Room? true
+you have a room
+Carpet size: 14.14
+
+Round Tower
+==========
+Material: Stone
+Capacity: 4
+Has room? false
+Floor area 2dp 1509.54
+Carpet size: 21.92
+
+
+
+
