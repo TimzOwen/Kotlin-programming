@@ -57,3 +57,58 @@ fun main(){
 }
 
 
+
+// Looping through a list.
+
+fun main (){
+    // using (while) expression 
+    // while(expression){
+    // Do something here
+    // }
+    
+    val guestFamily = listOf(2,4,6,8)
+    var totalGuest = 0
+    var index = 0
+    
+    while(index < guestFamily.size){
+        totalGuest += guestFamily[index] // same as totalGuest = TotalGuest + 
+        index ++
+    }
+    println("Total guest $totalGuest")
+    
+} 
+
+// Looping through a list. (FOR LOOP)
+
+fun main(){
+    // create a list of elements and use ("in")
+    val name = listOf("Timz","Mercy","Ken","Alfred","Simon")
+    for(names in name){
+        println(names)
+    }
+}
+
+
+// Finding the number of characters in a length 
+fun main(){
+    // create a list of elements and use ("in")
+    val name = listOf("Timz","Mercy","Ken","Alfred","Simon")
+    for(names in name){
+        // calc the lenght of elements
+        println("the name $names has ${names.length} characters")
+    }
+}
+
+
+// Lists operations 
+
+for (item in list) print(item) // Iterate over items in a list
+
+for (item in 'b'..'g') print(item) // Range of characters in an alphabet
+
+for (item in 1..5) print(item) // Range of numbers
+
+for (item in 5 downTo 1) print(item) // Going backward
+
+for (item in 3..6 step 2) print(item) // Prints: 35
+
