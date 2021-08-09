@@ -225,17 +225,21 @@ fun main() {
     
     // test the code with this main sample now
    
-    val order1 = Order(1)
+  val order1 = Order(1)
     order1.addItem(Noodles())
-    ordersList.add(order1)
+    order1.print()
+
+    println()
 
     val order2 = Order(2)
     order2.addItem(Noodles())
     order2.addItem(Vegetables())
-    ordersList.add(order2)
+    order2.print()
+
+    println()
 
     val order3 = Order(3)
     val items = listOf(Noodles(), Vegetables("Carrots", "Beans", "Celery"))
     order3.addAll(items)
-    ordersList.add(order3)
+    order3.print()
 }
