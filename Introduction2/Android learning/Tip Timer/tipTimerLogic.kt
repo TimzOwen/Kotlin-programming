@@ -56,7 +56,7 @@ fun main(){
 }
 
 
-// ==============================================================================================latest commit
+
 
 // Genericc types in kotlin
 
@@ -82,7 +82,6 @@ fun main(){
     
 }
 
-//================================================================================================lates commit 
 
 // Looping through a list.
 
@@ -139,7 +138,7 @@ for (item in 5 downTo 1) print(item) // Going backward
 for (item in 3..6 step 2) print(item) // Prints: 35
 
 
-//==================================================================================================latest commit 
+
 
 // odering Hotel challenge
 
@@ -169,4 +168,74 @@ fun main() {
     println(noodles)
     println(vegetables)
     println(vegetables2)
+}
+
+
+
+
+
+
+// Create an order now
+
+open class Item(val name: String, val price: Int)
+
+class Noodles : Item("Noodles", 10){
+    override fun toString() : String {
+        return name
+    }
+}
+
+class Vegetables(vararg val toppings : List<String> ) : Item("Vegetables", 5) {
+    override fun toString(): String{
+        if(toppings.isEmpty()){
+            return "$name chef's choice"
+        }else{
+        return name + " " + toppings.joinToString()
+        }
+    }
+}
+
+// create class order with integer 
+class Order(val orderNumber : Int){
+    
+    // declare a list to hold the items 
+    private val itemList = mutableListOf<Item>()
+
+   fun addItem(newItem: Item) {
+       itemList.add(newItem)
+   }
+
+   fun addAll(newItems: List<Item>) {
+       itemList.addAll(newItems)
+   }
+
+   fun print() {
+        println("Order #${orderNumber}")
+    	var total = 0
+    	for (item in itemList) {
+        	println("${item}: $${item.price}")
+        	total += item.price
+    }
+    println("Total: $${total}")
+   }
+}
+
+
+fun main() {
+    
+    // test the code with this main sample now
+   
+    val order1 = Order(1)
+    order1.addItem(Noodles())
+    ordersList.add(order1)
+
+    val order2 = Order(2)
+    order2.addItem(Noodles())
+    order2.addItem(Vegetables())
+    ordersList.add(order2)
+
+    val order3 = Order(3)
+    val items = listOf(Noodles(), Vegetables("Carrots", "Beans", "Celery"))
+    order3.addAll(items)
+    ordersList.add(order3)
 }
