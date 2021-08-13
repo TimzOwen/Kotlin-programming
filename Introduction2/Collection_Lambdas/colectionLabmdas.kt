@@ -52,3 +52,75 @@ fun main() {
     println("contains 7: ${setOfNumbers.contains(7)}")
    
 }
+
+
+
+
+
+// Maps in kotlin
+// This are set of Key value pair (Keys are unique)
+
+
+//Maps in Kotlin
+fun main() {
+    val agesOfPeople = mutableMapOf(
+        "owen" to 25,
+        "Timz" to 40,
+        "James" to 80
+        )
+    agesOfPeople.put("Ochieng", 30)	// add using .put() method
+    agesOfPeople["Shem"] = 70		// add using shortHand notation
+    println(agesOfPeople)
+      
+}
+
+
+
+// COLLECTIONS
+// Have similarities if they are mutabe or immutable with different methods
+
+
+//collections
+fun main() {
+    val agesOfPeople = mutableMapOf(
+        "owen" to 25,
+        "Timz" to 40,
+        "James" to 80
+        )
+   
+    
+    // iterate through elements 
+    agesOfPeople.forEach{println("${it.key} is ${it.value},")}
+      
+   }
+
+
+
+
+// using maps to perform collection
+
+fun main() {
+    val agesOfPeople = mutableMapOf(
+        "owen" to 25,
+        "Timz" to 40,
+        "James" to 80
+        )
+   
+    // iterate through elements using map 
+    println(agesOfPeople.map{"${it.key} is ${it.value}"}.joinToString(", "))
+      
+}
+
+
+//Filter elements ina collection
+
+fun main() {
+    val agesOfPeople = mutableMapOf(
+        "owen" to 25,
+        "Timz" to 40,
+        "James" to 80
+        )
+    val filterNames = agesOfPeople.filter{it.key.length < 5}
+    println(filterNames)
+      
+   }
