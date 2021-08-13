@@ -124,3 +124,61 @@ fun main() {
     println(filterNames)
       
    }
+
+
+
+
+// Lambdas and HIGH ORDER FUNCTIONS 
+
+// It's like you wrote a small function in the curly braces, but there's no function name. This idea—a function with no name that can
+// immediately be used as an expression—is a really useful concept called a lambda expression, or just lambda, for short.
+
+
+// Function Types
+
+// Example Function Type: (Int) -> Int
+
+{a : Int -> a * 3} // triples a number and returns an Interger
+
+
+// return type functions
+fun main(){
+    val tripple : (Int) -> Int = {a : Int -> a * 3 }
+    println(tripple(5))
+}
+
+
+// Simplification using Lambda
+fun main(){
+    val tripple : (Int) -> Int = {a : Int -> a * 3 }
+    println(tripple(5))
+    
+    // simplified
+    val tripple2 : (Int) -> Int = {it * 3}
+    println(tripple2(3))
+}
+
+
+// HIGH ORDER FUNCTIONS
+
+//Comparison with high  order Functions 
+
+fun main(){
+    val names = listOf("Tim","Abel","Timz","Captain","James")
+    println(names.sorted())
+    [Abel, Captain, James, Tim, Timz]
+}
+
+
+
+//Comparison with high  order Functions  (sortedWith)
+
+fun main(){
+    val names = listOf("Tim","Abel","Timz","Captain","James")
+    println(names.sorted())
+    println(names.sortedWith{str1 : String, str2 : String -> str1.length - str2.length})
+    Abel, Captain, James, Tim, Timz]
+    [Tim, Abel, Timz, James, Captain] // according to length
+}
+
+
