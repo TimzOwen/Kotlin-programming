@@ -205,3 +205,10 @@ class CoinRoll(){
 }
 
 
+
+// simplifed version of the challenge on Dice challenge Kotlin basic
+fun main() = println("The flidded side is ${Coin().flip()}")
+
+class Coin {
+    fun flip() = listOf("Heads","Tail").random()
+}
