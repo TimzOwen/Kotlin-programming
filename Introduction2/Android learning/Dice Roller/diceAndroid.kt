@@ -168,3 +168,40 @@ fun main()
 //output
 Your 20 sided dice just rolled 3
 Your 6 sided dice just rolled 1
+
+
+
+
+
+// CHALLENGE 
+// create Coin class and have different colors and sides. (challenge)
+
+fun main() {
+    val dice = Dice(12, "Blue")
+    println("${dice.numSides} sided ${dice.color} dice Rolled ${dice.roll()}")
+    val dice2 = Dice(120, "Red")
+    println("your ${dice2.numSides} sided ${dice2.color} dice rolled ${dice2.roll()}")
+    val coin = Coin()
+    println("The first flip is ${coin.flip()}")
+    val coinRoll = CoinRoll()
+    println("Coind rolled: ${coinRoll.flip()}")
+}
+class Dice(val numSides : Int, val color : String){
+    fun roll() : Int {
+        return (1..numSides).random()
+    }
+}
+class Coin(){
+    fun flip() : Int {
+        return (1..2).random()
+    }
+}
+class CoinRoll(){
+    fun flip() : String{
+        val head = ("Heads")
+        val tail = ("Tails")
+        return listOf(head, tail).random()
+    }
+}
+
+
