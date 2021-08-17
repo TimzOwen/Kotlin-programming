@@ -164,3 +164,75 @@ fun main(){
     }
     
 }
+
+
+
+
+
+// FLOOR AREA INCLUDED
+
+// classes and inheritance 
+import kotlin.math.PI
+
+abstract class Dwelling(private var residents : Int){
+    abstract val buildingMaterial : String
+    abstract val capacity : Int
+    
+    fun hasRoom() : Boolean {
+        return residents < capacity
+    }   
+    abstract fun floorArea() : Double 
+}
+
+class SquareCabine(residents : Int, val length : Double) : Dwelling(residents){
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+    
+    override fun floorArea() : Double{
+        return length * length
+    }
+}
+open class RoundHat(residents : Int, val radius : Double) : Dwelling(residents){
+    override val buildingMaterial = "Straw"
+    override val capacity = 10
+    
+    override fun floorArea() : Double{
+        return PI * radius * radius 
+    }
+}
+
+class RoundTower(residents : Int,
+                 radius : Double,
+                val floors : Int = 3) : RoundHat(residents, radius){
+    override val buildingMaterial = "stone"
+    override val capacity = 10 * floors
+}
+
+fun main(){
+    val squareCab = SquareCabine(8, 10.5)
+    with(squareCab){
+        println("Sqaure cabin")
+        println("has room is: ${hasRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material made is : ${buildingMaterial}")
+        println("Floor area is ${floorArea()}")
+    }
+    val roundHat = RoundHat(8, 21.7)
+    with(roundHat){
+        println("\nRoundHat==")
+        println("HasRoom : ${hasRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material is: ${buildingMaterial}")
+        println("Floor area is: ${floorArea()}")
+    }
+    
+    val roundTower = RoundTower(5,4.5)
+    with(roundTower){
+        println("\nRoundTower==")
+        println("HasRoom : ${hasRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material is: ${buildingMaterial}")  
+        println("Floor area: ${floorArea()}")
+    }
+    
+}
