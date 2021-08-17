@@ -313,3 +313,110 @@ fun main(){
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+// FULL CODE
+
+
+
+
+// classes and inheritance 
+import kotlin.math.PI
+import kotlin.math.sqrt
+
+abstract class Dwelling(private var residents : Int){
+    abstract val buildingMaterial : String
+    abstract val capacity : Int
+    
+    fun hasRoom() : Boolean {
+        return residents < capacity
+    }   
+    abstract fun floorArea() : Double 
+    
+    fun getRoom(){
+        if(capacity > residents){
+            residents ++
+            println("You have a room")
+        }else{
+            println("No Room for today!!")
+        }
+    }
+}
+
+class SquareCabine(residents : Int, val length : Double) : Dwelling(residents){
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+    
+    override fun floorArea() : Double{
+        return length * length
+    }
+}
+open class RoundHat(residents : Int, val radius : Double) : Dwelling(residents){
+    override val buildingMaterial = "Straw"
+    override val capacity = 10
+    
+    override fun floorArea() : Double{
+        return PI * radius * radius 
+    }
+    
+    fun calculateMaxCarpetSize(): Double {
+    	val diameter = 2 * radius
+    	return sqrt(diameter * diameter / 2)
+	}
+}
+
+class RoundTower(residents : Int,
+                 radius : Double,
+                val floors : Int = 3) : RoundHat(residents, radius){
+    override val buildingMaterial = "stone"
+    override val capacity = 10 * floors
+    
+    override fun floorArea() : Double{
+        return super.floorArea() * floors
+    }
+}
+
+fun main(){
+    val squareCab = SquareCabine(8, 10.5)
+    with(squareCab){
+        println("Sqaure cabin")
+        println("has room is: ${hasRoom()}")
+        println("Room? : ${getRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material made is : ${buildingMaterial}")
+        println("Floor area is %.2f".format(floorArea()))
+    }
+    val roundHat = RoundHat(8, 21.7)
+    with(roundHat){
+        println("\nRoundHat==")
+        println("HasRoom : ${hasRoom()}")
+        println("Room? : ${getRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material is: ${buildingMaterial}")
+        println("Carpet size: ${calculateMaxCarpetSize()}")
+        println("Floor area is: %.2f".format(floorArea()))
+       
+    }
+    
+    val roundTower = RoundTower(5,4.5)
+    with(roundTower){
+        println("\nRoundTower==")
+        println("HasRoom : ${hasRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material is: ${buildingMaterial}")  
+        println("Carpet size: ${calculateMaxCarpetSize()}")
+        println("Floor area: %.2f".format(floorArea()))
+    }
+    
+}
