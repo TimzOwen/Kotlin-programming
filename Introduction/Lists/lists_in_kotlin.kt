@@ -14,6 +14,14 @@ fun main() {
     //search if there are existing elements in a list
     println("Is 4 present? ${numbers.contains(4)}") // returns a boolean
     
+
+   
+    val number = listOf(2,4,6,8,10)
+    println("List of numbers: $number and os size ${number.size} elements")
+    println("last element ${number[number.size-1]} also is ${number.last()}")
+    println("first element is ${number.first()} and ${number[0]}")
+
+    
 }
 
 
