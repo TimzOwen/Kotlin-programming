@@ -11,9 +11,6 @@ fun main() {
 }
 
 
-
-
-
 // Maps --> key value pair data storage.
 
 // values can be --> objects, numbers or strings.
