@@ -43,3 +43,38 @@ fun main() {
     people.forEach{println("${it.key} is ${it.value}")}
 }
 
+
+
+
+// USING MAP FUNCTION 
+fun main() {
+    val people = mutableMapOf<String, Int>(
+    "Timz" to 30,
+    "Chelsea" to 60)
+    people.put("Gildred" , 70) 
+    people["Doe"] = 45	
+    people["Timz"] = 100	
+    
+    //iterate through the map
+    println(people.map{"${it.key} is ${it.value}"}.joinToString(","))
+}
+
+
+
+
+//FILTERED MAPS objects
+
+fun main() {
+    val people = mutableMapOf<String, Int>(
+    "Timz" to 30,
+    "Chelsea" to 60)
+    people.put("Gildred" , 70) 
+    people["Doe"] = 45	
+    people.put("Tim",10)
+    people["Timz"] = 100	
+    
+    val filteredNames = people.filter{it.key.length < 4}
+    println(filteredNames)
+}
+
+
