@@ -113,3 +113,28 @@ fun main() {
     println(randomShufle)
 }
 
+
+
+
+// LIST OF WORDS
+
+fun main() {
+    val words = listOf("about", "acute", "awesome", "balloon", "best", "brief", "class", "coffee", "creative")
+    
+    // Print words that start with letter b. ignore case
+    val filteredWords = words.filter{ it.startsWith("b", ignoreCase = true)}
+    println(filteredWords)
+    
+    // shuffle in no order (random)
+    val randomShufle = words.filter {it.startsWith("b", ignoreCase = true)}.shuffled()
+    println(randomShufle)
+    
+    // shuffle the first 2 elements
+    val randomShufled = words.filter {it.startsWith("b", ignoreCase = true)}.shuffled().take(2)
+    println(randomShufled)
+    
+    // random , specific and sorted
+    val randomShufler = words.filter {it.startsWith("b", ignoreCase = true)}.shuffled().take(2).sorted()
+    println(randomShufler)
+    
+}
