@@ -83,6 +83,33 @@ fun main() {
     // simplification using it expression
     val double : (Int) -> Int = {it * 2}
     println(double(3))
- 
+ }
 
+
+// HIGH ORDER FUNCTIONS
+
+fun main() {
+    
+    val names = listOf("Fred","Tim","Alex","Sandra","Osodo","Brenda","Aleky")
+    println(names.sorted())
+    
+    // print sorted but with order interms of lenght
+    println(names.sortedWith{str1 : String, str2 : String -> str1.length - str2.length})
+    
 }
+
+
+
+// LIST OF WORDS
+
+fun main() {
+    val words = listOf("about", "acute", "awesome", "balloon", "best", "brief", "class", "coffee", "creative")
+    
+    // Print words that start with letter b. ignore case
+    val filteredWords = words.filter{ it.startsWith("b", ignoreCase = true)}
+    println(filteredWords)
+    
+    val randomShufle = words.filter {it.startsWith("b", ignoreCase = true)}.shuffled()
+    println(randomShufle)
+}
+
