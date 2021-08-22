@@ -78,3 +78,14 @@ fun main() {
 }
 
 
+// LAMBDAS Functions & simplification using it (high order function)
+fun main() {
+    val triple : (Int) -> Int = {a : Int -> a * 3}
+    println(triple(3))
+ 
+    // simplification using it expression
+    val double : (Int) -> Int = {it * 2}
+    println(double(3))
+ 
+
+}
