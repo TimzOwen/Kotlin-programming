@@ -2,10 +2,24 @@
 // Hello world Kotlin first program
 
 fun printHello(){
-    print("Hello world Kotlin")
+    print("Hello world Kotlin") // print statement
 }
 // call the function here
 printHello()
+
+// function --> segment of a program that perform a specific task.
+
+// Define ->  you specify the instructions needed to perform a task
+// calling -> perfoming the defined instruction by the function.
+
+// parts of a function:
+// Function name:
+// Function inputs
+// function body
+
+fun funNaming(){
+    print("testng")
+}
 
 
 // Operators (+-/)
