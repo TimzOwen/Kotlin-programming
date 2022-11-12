@@ -18,18 +18,22 @@ printHello()
 // function body
 
 fun funNaming(){
-    print("testng")
+    print("testing")
 }
 
+// Fixing errors in code
+fun checkErrors(){
+    println("give examples of code errors and let students solve it ")
+}
 
 // Operators (+-/)
 
-1 + 1 = 2   // addition
-5 - 2 = 3   //subtraction
-50 / 10 = 5 // whole number division
-1 / 2 = 0   // division of whole numbers
-1.0 / 2.5 = 0.5 //division of fractions
-6 * 5 = 30  // multiplication
+1 + 1 = 2   // addition.
+5 - 2 = 3   //subtraction.
+50 / 10 = 5 // whole number division.
+1 / 2 = 0   // division of whole numbers.
+1.0 / 2.5 = 0.5 //division of fractions.
+6 * 5 = 30  // multiplication.
 
 val fish3 = 4
 val fish4 = 5
@@ -49,10 +53,27 @@ res0: kotlin.Int = 1
 
 
 //Variables
+// container for holding a pience of data  []box that contain a value
 
+// Type of variables
+    // String  - > store characters in double quotes
+    // boolean - > store a tru or false state
+    // double - store decimal numbers
+    // Int -> store integers
+    // float -> has an f or F in the end of the number value
+
+// expression : Value
+// val name : datatype = initial value
 
 // val name: type = value 
 val myName : String = "Timz Owen"
+
+// use dolar -> template expression to get evaliuated value
+val count : Int = 4
+println("you have $count unread mesages")
+
+// Type inference - This is when the compiler knows the data type without explicit casting
+//val name = initial value
 
 var a = 5
 var b = 5
@@ -92,7 +113,6 @@ var moreMoreFish List<String?>?  = null // both List and elements are null
 
 
 //NULL POINT EXCEPTION
-
 
 
 
