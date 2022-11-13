@@ -99,6 +99,15 @@ val oneMillion = 1_000_000
 val socialNum = 234_456_345_764
 
 
+// complex operation uses {opening and closing curl bracket to avoid wrong results}
+val numOfPhotos = 20
+val numOfDeleted = 5
+println("remaining phots ${ numOfPhotos - numOfDeleted }")
+
+// Updating variables
+
+
+
 // NULL VALUES KOTLIN
 //values cannot be null in kotlin. use question marks
 
