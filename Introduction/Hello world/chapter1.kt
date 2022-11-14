@@ -1,3 +1,4 @@
+import com.sun.org.apache.xpath.internal.operations.Bool
 
 // Hello world Kotlin first program
 
@@ -55,15 +56,20 @@ res0: kotlin.Int = 1
 //Variables
 // container for holding a pience of data  []box that contain a value
 
-// Type of variables
-    // String  - > store characters in double quotes
-    // boolean - > store a tru or false state
-    // double - store decimal numbers
-    // Int -> store integers
-    // float -> has an f or F in the end of the number value
+/** Type of variables
+     * String  - > store characters in double quotes
+     * boolean - > store a tru or false state
+     * double - store decimal numbers
+     * Int -> store integers
+     * float -> has an f or F in the end of the number value
+*/
 
 // expression : Value
 // val name : datatype = initial value
+
+// boolean
+var isEnabled : Boolean = true
+println(isEnabled)
 
 // val name: type = value 
 val myName : String = "Timz Owen"
@@ -104,7 +110,29 @@ val numOfPhotos = 20
 val numOfDeleted = 5
 println("remaining phots ${ numOfPhotos - numOfDeleted }")
 
-// Updating variables
+// Updating variables -> ONLY VAR can be updated [reasigned] and NOT VAL which cannot be reasigned
+// var used when you expect that the variable will change
+var age = 30
+age = 40
+println(age)
+
+// calue increament operator and Decreament operator
+var age = 20
+age = age + 5
+println(age)     // 25
+
+var age = 20
+age++
+println(age)  // 21
+
+var age = 20
+age--
+println(age)   // 19
+
+// Code comments
+/**
+ * This can be used as long comment code block format
+ */
 
 
 
