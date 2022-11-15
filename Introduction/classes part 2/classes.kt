@@ -60,6 +60,22 @@ fun main(){
 
 
 
+class SquareCabine(residents : Int) : Dwelling(residents){
+    override val buildingMaterial = "Wood"
+    override val capacity = 6
+}
+
+fun main(){
+    val squareCab = SquareCabine(8)
+    with(squareCab){
+        println("Sqaure cabin")
+        println("has room is: ${hasRoom()}")
+        println("Capacity is: ${capacity}")
+        println("Material made is : ${buildingMaterial}")
+    }
+
+
+
 
 
 
