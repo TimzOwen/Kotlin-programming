@@ -317,6 +317,15 @@ fun main() {
 }
 
 
+// declare and call functions
+fun main() {
+    welcomeToKotlin()
+}
+
+fun welcomeToKotlin(){
+    println("welcome to android kotlin")
+}
+
 
 
 // SINGLE EXPRESSION FUNCTION RETURN
