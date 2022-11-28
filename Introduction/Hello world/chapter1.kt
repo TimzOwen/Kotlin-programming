@@ -293,6 +293,16 @@ fun main() {
     println("default value sum is ${calculateBudget()}")
     println("NO default here, parms passed sum is ${calculateBudget(4,4)}") //overwrite the default values
 }
+// default values in kotlin functions
+fun main(){
+    println(helloMessage(age = 80, userName="Timz Owen"))
+    println(helloMessage(age=100))
+}
+
+fun helloMessage(userName : String ="Owen", age: Int){
+    var hello = "hello $userName you are $age years old"
+    println(hello)
+}
 
 
 
@@ -352,7 +362,7 @@ fun greetingFunction() : String = "Hello single expression function"
 fun greetingTwo() = "simpler expression as kotlin knows what to return "
 
 fun printGreeting() {
-    println(greetingFunction())
+    println(greetingFunction()) // Returns the main message
     println(greetingTwo())
 }
 
@@ -363,7 +373,7 @@ fun main() {
 }
 
 
-// FUNCTION PARAMETER
+// FUNCTION PARAMETERS
 
 fun printGreeting(userName : String) {
     // instead of using + concatenation use kotlin's $ template
@@ -403,6 +413,17 @@ fun main() {
     println(printGreeting3("Timz"))
     println(greeting4("Timz Owen","Android developer"))
 
+}
+
+// Named parameters
+// order of the named paremeters does not change irrepsective of how you order them
+fun main(){
+    println(helloMessage(age = 80, userName="Timz Owen"))
+}
+
+fun helloMessage(userName : String, age: Int){
+    var hello = "hello $userName you are $age years old"
+    println(hello)
 }
 
 
