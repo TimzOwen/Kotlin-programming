@@ -487,7 +487,6 @@ fun main() {
 // When case statements for (switch case in other programming languages)
 
 fun main() {
-
     when(val userNumber = 20){
         10 -> println("Number is $userNumber")
         20 -> println("number is $userNumber")
@@ -495,7 +494,15 @@ fun main() {
         50 -> println("The number is $userNumber")
         else -> println("No matching value")
     }
-
 }
 
+// Multiple occasions in one check
+fun main(){
+    val x = 3
+    when(x){
+        3,5,7,9 -> println("Odd")
+        2,4,6,8 -> println("even")
+        else -> println("invalid")
+    }
+}
 
